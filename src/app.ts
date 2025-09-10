@@ -14,7 +14,7 @@ export const buildApp = () => {
 
     app.use(requestLogger);
 
-    app.use('/posts', postsRouter);
+    app.use('/api/posts', postsRouter);
 
     app.get('/health', (_req, res) => {
         res.status(200).json({ status: 'ok' });
