@@ -19,3 +19,8 @@ export interface IGetPostsResult {
   posts: IPost[];
   summary: IPostsSummary;
 }
+
+export interface IPostsCount {
+  name: string;
+  postCount: number;
+}
