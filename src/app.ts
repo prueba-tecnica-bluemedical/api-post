@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { requestLogger } from './shared/middlewares/requestLogger';
 import { errorHandler } from './shared/middlewares/errorHandler';
+import { postsRouter } from './posts/posts.routes';
 
 export const buildApp = () => {
     const app = express();
@@ -13,7 +14,7 @@ export const buildApp = () => {
 
     app.use(requestLogger);
 
-    //app.use('/posts');
+    app.use('/posts', postsRouter);
 
     app.get('/health', (_req, res) => {
         res.status(200).json({ status: 'ok' });
